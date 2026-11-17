@@ -1,12 +1,17 @@
-# Sakura Tactics
+# Sakura Tactics — Painterly Android Demo v2
 
-A landscape Android tactical samurai combat prototype. This repository is being prepared for automatic APK builds.
+**Playable source project, not a precompiled APK.** Open `web/index.html` in a browser to preview, or upload this project to GitHub and use the included `Build Sakura Tactics Painterly APK` GitHub Actions workflow to compile an installable debug APK.
 
-## Original playable prototype
-The original Sakura Tactics prototype ZIP was created in ChatGPT and includes `web/` (HTML5 game and watercolor art) and `android-app/` (Android WebView wrapper). The binary art assets and complete game source still need to be transferred into this repository; they are **not** included by this README.
+## What is inside
+- Exact painterly battle-screen artwork (`painterly_battle.jpg`) supplied as the stage background.
+- Touch targets aligned to the illustrated Slash and 10-Hit Slash Combo buttons.
+- One animated attack sequence: pink arc slashes, ten timed impact hits, particles, critical text, screen shake, hit stop-like flashes, enemy HP reduction and enemy retaliation.
+- Select enemy, select an octagon, guard, restart, victory/defeat.
 
-## Build
-The Android GitHub Actions workflow at `.github/workflows/android-apk.yml` builds `android-app` using Java 17 / Android SDK / Gradle and uploads `sakura-tactics-debug-apk` in Actions artifacts. The workflow will only pass once the Android project has been uploaded.
+## Limitations
+- The samurai and oni are part of the original painting. They are not independently moving sprites in this visual version. Octagon selection highlights a tile rather than moving the character. Proper movable character sprites require separate painted character assets and a clean background.
+- The procedural slash effect plays over the illustration; it is not the previously generated GIF as an extracted frame-by-frame character animation.
+- No APK was compiled or device-tested in this environment.
 
-## Game design
-Tap octagonal spaces to move; tap the horned oni to select; use basic STRIKE or the cinematic ten-hit `Sakura Storm` critical combo. Original art is Japanese watercolor and painterly fantasy with sakura blossoms.
+## Android build
+Gradle 8.10.2, Android Gradle Plugin as in project, JDK 17 and Android SDK platform 35. After CI passes, download `sakura-tactics-painterly-apk` from the workflow artifacts.
